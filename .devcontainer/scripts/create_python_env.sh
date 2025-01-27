@@ -39,6 +39,7 @@ venv_add_tensorflow() {
 clear
 echo "⚙️  Instaling dependencies..."
 python -m pip install poetry --no-warn-script-location --root-user-action=ignore  >> .devcontainer/logs.log
+python -m pip install poetry-plugin-shell --no-warn-script-location --root-user-action=ignore  >> .devcontainer/logs.log
 poetry install >> .devcontainer/logs.log
 
 # Ask if the user wants to create a PyTorch environment
