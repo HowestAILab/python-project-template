@@ -17,8 +17,8 @@
     // A GPU-enabled container requires the NVIDIA CUDA Toolkit (contains cuFFT, cuBLAS, etc.) and cuDNN in the container itself
     // For compatible version combinations check https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2404/x86_64/
     "ghcr.io/devcontainers/features/nvidia-cuda:1": {
-      "installToolkit": false,
-      "installCudnn": false,
+      "installToolkit": true,
+      "installCudnn": true,
       "cudaVersion": "12.6",
       "cudnnVersion": "9.5.0.50"
     },
