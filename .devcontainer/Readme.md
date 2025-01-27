@@ -53,6 +53,7 @@ It has optional support for **TensorFlow** and **PyTorch** on **GPU** enabled ma
 | **❌ Error**                                                | **✅ Solution**                                                                |
 | :---------------------------------------------------------- | :----------------------------------------------------------------------------- |
 | Shell scripts fail to run or complain about `\r` characters | Check if the `End of Line` formatting of the scripts is set to `LF` in VSCode. |
+| `poetry shell` fails or is not recognized as a command    | Poetry shell was moved to a plugin (January 2025). Run `pip install poetry-plugin-shell` in the terminal. |
 
 ## Versioning
 
