@@ -1,9 +1,16 @@
-# Devcontainer Template
+<p align="center"><img align="center" width="280" src="../.github/Howest-logo-wit.svg#gh-dark-mode-only"/></p>
+<p align="center"><img align="center" width="280" src="../.github/Howest-logo-zwart.svg#gh-light-mode-only"/></p>
 
-This is an up-to-date **Devcontainer** template for developing **Python** projects (with Git and Poetry).<br>
-It has optional support for **TensorFlow** and **PyTorch** on **GPU** enabled machines.
+<h3 align="center">Python project template 🐍✨</h3>
 
-## Instructions
+<hr>
+
+_This is an up-to-date **Devcontainer** template for developing **Python** projects._<br>
+_It has optional support for **TensorFlow** and **PyTorch** on **GPU** enabled machines._
+
+# Instructions
+
+<img width="500" src="../.github/devcontainer-step-1.png"/>
 
 1. Create a new repository using this GitHub template.
 2. Clone the repository and open it using VSCode.
@@ -13,15 +20,15 @@ It has optional support for **TensorFlow** and **PyTorch** on **GPU** enabled ma
 6. Follow the instructions in the terminal to install TensorFlow or PyTorch.
 7. You are now ready to start developing! 😀
 
-## Devcontainer info
+# Devcontainer info
 
-### Base OS
+## Base OS
 
 | Name   | Version | Image                                                                                                                  |
 | :----- | :------ | :--------------------------------------------------------------------------------------------------------------------- |
 | Ubuntu | 24.04   | [mcr.microsoft.com/devcontainers/base:ubuntu-24.04](https://github.com/devcontainers/images/tree/main/src/base-ubuntu) |
 
-### Features
+## Features
 
 | Name        | Version             | Image                                                                                                               | Optional |
 | :---------- | :------------------ | :------------------------------------------------------------------------------------------------------------------ | -------- |
@@ -30,7 +37,7 @@ It has optional support for **TensorFlow** and **PyTorch** on **GPU** enabled ma
 | Git         | Latest              | [ghcr.io/devcontainers/features/git:1](https://github.com/devcontainers/features/tree/main/src/git)                 | No       |
 | GitHub CLI  | Latest              | [ghcr.io/devcontainers/features/github-cli:1](https://github.com/devcontainers/features/tree/main/src/github-cli)   | No       |
 
-### Libraries
+## Libraries
 
 | Name       | Version | Description                                         | Optional |
 | :--------- | :------ | :-------------------------------------------------- | -------- |
@@ -38,7 +45,7 @@ It has optional support for **TensorFlow** and **PyTorch** on **GPU** enabled ma
 | PyTorch    | 2.5.0   | AI development framework                            | Yes      |
 | Poetry     | Latest  | Venv-like solution with great dependency management | No       |
 
-### Extensions
+## Extensions
 
 | Name     | Description             | ID                        |
 | :------- | :---------------------- | :------------------------ |
@@ -48,14 +55,14 @@ It has optional support for **TensorFlow** and **PyTorch** on **GPU** enabled ma
 | Jupyter  | Jupyter extension pack  | ms-toolsai.jupyter        |
 | Prettier | Code formatter          | esbenp.prettier-vscode    |
 
-## Common errors
+# Possible errors
 
 | **❌ Error**                                                | **✅ Solution**                                                                |
 | :---------------------------------------------------------- | :----------------------------------------------------------------------------- |
 | Shell scripts fail to run or complain about `\r` characters | Check if the `End of Line` formatting of the scripts is set to `LF` in VSCode. |
 | `poetry shell` fails or is not recognized as a command    | Poetry shell was moved to a plugin (January 2025). Run `pip install poetry-plugin-shell` in the terminal. |
 
-## Versioning
+# Versioning
 
 | CUDA Toolkit | Linux Driver Version | Windows Driver Version |
 | :----------- | :------------------- | :--------------------- |
@@ -74,7 +81,7 @@ It has optional support for **TensorFlow** and **PyTorch** on **GPU** enabled ma
 
 The most recent common Python version is **3.12**.
 
-## GPU accelerated containers
+# GPU acceleration
 
 The **hosts NVIDIA driver** gets passed to the container using the **[NVIDIA Container Toolkit](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/index.html)**.
 You can validate your Container Toolkit installation by checking the **Docker daemon** configuration file on your server: `/etc/docker/daemon.json`.
