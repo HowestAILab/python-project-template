@@ -1,9 +1,16 @@
-# Devcontainer Template
+<p align="center"><img align="center" width="280" src=".github/Howest-logo-wit.svg#gh-dark-mode-only"/></p>
+<p align="center"><img align="center" width="280" src=".github/Howest-logo-zwart.svg#gh-light-mode-only"/></p>
 
-This is an up-to-date **Devcontainer** template for developing **Python** projects (with Git and Poetry).<br>
-It has optional support for **TensorFlow** and **PyTorch** on **GPU** enabled machines.
+<h3 align="center">Python project template 🐍✨</h3>
 
-## Instructions
+<hr>
+
+_This is an up-to-date **Devcontainer** template for developing **Python** projects._<br>
+_It has optional support for **TensorFlow** and **PyTorch** on **GPU** enabled machines._
+
+# Instructions
+
+<img width="500" src=".github/devcontainer-step-1.png"/>
 
 1. Create a new repository using this GitHub template.
 2. Clone the repository and open it using VSCode.
@@ -13,32 +20,32 @@ It has optional support for **TensorFlow** and **PyTorch** on **GPU** enabled ma
 6. Follow the instructions in the terminal to install TensorFlow or PyTorch.
 7. You are now ready to start developing! 😀
 
-## Devcontainer info
+# Devcontainer info
 
-### Base OS
+## Base OS
 
 | Name   | Version | Image                                                                                                                  |
 | :----- | :------ | :--------------------------------------------------------------------------------------------------------------------- |
 | Ubuntu | 24.04   | [mcr.microsoft.com/devcontainers/base:ubuntu-24.04](https://github.com/devcontainers/images/tree/main/src/base-ubuntu) |
 
-### Features
+## Features
 
 | Name        | Version             | Image                                                                                                               | Optional |
 | :---------- | :------------------ | :------------------------------------------------------------------------------------------------------------------ | -------- |
-| NVIDIA CUDA | CUDA 12.6 & cuDNN 9 | [ghcr.io/devcontainers/features/nvidia-cuda:1](https://github.com/devcontainers/features/tree/main/src/nvidia-cuda) | Yes      |
+| NVIDIA CUDA | CUDA 12.8 & cuDNN 9 | [ghcr.io/devcontainers/features/nvidia-cuda:1](https://github.com/devcontainers/features/tree/main/src/nvidia-cuda) | Yes      |
 | Python      | 3.12                | [ghcr.io/devcontainers/features/python:1](https://github.com/devcontainers/features/tree/main/src/python)           | No       |
 | Git         | Latest              | [ghcr.io/devcontainers/features/git:1](https://github.com/devcontainers/features/tree/main/src/git)                 | No       |
 | GitHub CLI  | Latest              | [ghcr.io/devcontainers/features/github-cli:1](https://github.com/devcontainers/features/tree/main/src/github-cli)   | No       |
 
-### Libraries
+## Libraries
 
 | Name       | Version | Description                                         | Optional |
 | :--------- | :------ | :-------------------------------------------------- | -------- |
-| TensorFlow | 2.17.0  | AI development framework                            | Yes      |
-| PyTorch    | 2.5.0   | AI development framework                            | Yes      |
+| TensorFlow | 2.19.0  | AI development framework                            | Yes      |
+| PyTorch    | 2.7.0   | AI development framework                            | Yes      |
 | Poetry     | Latest  | Venv-like solution with great dependency management | No       |
 
-### Extensions
+## Extensions
 
 | Name     | Description             | ID                        |
 | :------- | :---------------------- | :------------------------ |
@@ -48,14 +55,14 @@ It has optional support for **TensorFlow** and **PyTorch** on **GPU** enabled ma
 | Jupyter  | Jupyter extension pack  | ms-toolsai.jupyter        |
 | Prettier | Code formatter          | esbenp.prettier-vscode    |
 
-## Possible errors
+# Possible errors
 
 | **❌ Error**                                                | **✅ Solution**                                                                |
 | :---------------------------------------------------------- | :----------------------------------------------------------------------------- |
 | Shell scripts fail to run or complain about `\r` characters | Check if the `End of Line` formatting of the scripts is set to `LF` in VSCode. |
 | `poetry shell` fails or is not recognized as a command    | Poetry shell was moved to a plugin (January 2025). Run `pip install poetry-plugin-shell` in the terminal. |
 
-## Versioning
+# Versioning
 
 | CUDA Toolkit | Linux Driver Version | Windows Driver Version |
 | :----------- | :------------------- | :--------------------- |
@@ -69,12 +76,12 @@ It has optional support for **TensorFlow** and **PyTorch** on **GPU** enabled ma
 
 | Latest version    | Python version | CUDA |
 | :---------------- | :------------- | :--- |
-| TensorFlow 2.17.0 | 3.9-3.12       | 12.3 |
-| PyTorch 2.5.0     | 3.9-3.12       | 12.4 |
+| TensorFlow 2.19.0 | 3.9-3.12       | 12.3 |
+| PyTorch 2.7.0     | 3.9-3.13       | 12.8 |
 
 The most recent common Python version is **3.12**.
 
-## GPU accelerated containers
+# GPU acceleration
 
 The **hosts NVIDIA driver** gets passed to the container using the **[NVIDIA Container Toolkit](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/index.html)**.
 You can validate your Container Toolkit installation by checking the **Docker daemon** configuration file on your server: `/etc/docker/daemon.json`.

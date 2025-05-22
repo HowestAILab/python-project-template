@@ -16,8 +16,8 @@ pandas = "^2.2.3"
 jupyter = "^1.1.1"
 
 [[tool.poetry.source]]
-name = "pytorch-cu124"
-url = "https://download.pytorch.org/whl/cu124"
+name = "pytorch-cu128"
+url = "https://download.pytorch.org/whl/cu128"
 priority = "explicit"
 
 [build-system]

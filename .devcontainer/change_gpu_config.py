@@ -80,7 +80,7 @@ if gpu:
     features["ghcr.io/devcontainers/features/nvidia-cuda:1"] = {
         "installToolkit": True,
         "installCudnn": True,
-        "cudaVersion": "12.6",
+        "cudaVersion": "12.8",
         "cudnnVersion": "9.5.0.50"
     }
     devcontainer_json["features"] = features
