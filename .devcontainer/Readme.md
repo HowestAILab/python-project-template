@@ -32,7 +32,7 @@ _It has optional support for **TensorFlow** and **PyTorch** on **GPU** enabled m
 
 | Name        | Version             | Image                                                                                                               | Optional |
 | :---------- | :------------------ | :------------------------------------------------------------------------------------------------------------------ | -------- |
-| NVIDIA CUDA | CUDA 12.6 & cuDNN 9 | [ghcr.io/devcontainers/features/nvidia-cuda:1](https://github.com/devcontainers/features/tree/main/src/nvidia-cuda) | Yes      |
+| NVIDIA CUDA | CUDA 12.8 & cuDNN 9 | [ghcr.io/devcontainers/features/nvidia-cuda:1](https://github.com/devcontainers/features/tree/main/src/nvidia-cuda) | Yes      |
 | Python      | 3.12                | [ghcr.io/devcontainers/features/python:1](https://github.com/devcontainers/features/tree/main/src/python)           | No       |
 | Git         | Latest              | [ghcr.io/devcontainers/features/git:1](https://github.com/devcontainers/features/tree/main/src/git)                 | No       |
 | GitHub CLI  | Latest              | [ghcr.io/devcontainers/features/github-cli:1](https://github.com/devcontainers/features/tree/main/src/github-cli)   | No       |
@@ -41,8 +41,8 @@ _It has optional support for **TensorFlow** and **PyTorch** on **GPU** enabled m
 
 | Name       | Version | Description                                         | Optional |
 | :--------- | :------ | :-------------------------------------------------- | -------- |
-| TensorFlow | 2.17.0  | AI development framework                            | Yes      |
-| PyTorch    | 2.5.0   | AI development framework                            | Yes      |
+| TensorFlow | 2.19.0  | AI development framework                            | Yes      |
+| PyTorch    | 2.7.0   | AI development framework                            | Yes      |
 | Poetry     | Latest  | Venv-like solution with great dependency management | No       |
 
 ## Extensions
@@ -57,10 +57,10 @@ _It has optional support for **TensorFlow** and **PyTorch** on **GPU** enabled m
 
 # Possible errors
 
-| **❌ Error**                                                | **✅ Solution**                                                                |
-| :---------------------------------------------------------- | :----------------------------------------------------------------------------- |
-| Shell scripts fail to run or complain about `\r` characters | Check if the `End of Line` formatting of the scripts is set to `LF` in VSCode. |
-| `poetry shell` fails or is not recognized as a command    | Poetry shell was moved to a plugin (January 2025). Run `pip install poetry-plugin-shell` in the terminal. |
+| **❌ Error**                                                | **✅ Solution**                                                                                           |
+| :---------------------------------------------------------- | :-------------------------------------------------------------------------------------------------------- |
+| Shell scripts fail to run or complain about `\r` characters | Check if the `End of Line` formatting of the scripts is set to `LF` in VSCode.                            |
+| `poetry shell` fails or is not recognized as a command      | Poetry shell was moved to a plugin (January 2025). Run `pip install poetry-plugin-shell` in the terminal. |
 
 # Versioning
 
@@ -76,8 +76,8 @@ _It has optional support for **TensorFlow** and **PyTorch** on **GPU** enabled m
 
 | Latest version    | Python version | CUDA |
 | :---------------- | :------------- | :--- |
-| TensorFlow 2.17.0 | 3.9-3.12       | 12.3 |
-| PyTorch 2.5.0     | 3.9-3.12       | 12.4 |
+| TensorFlow 2.19.0 | 3.9-3.12       | 12.3 |
+| PyTorch 2.7.0     | 3.9-3.13       | 12.8 |
 
 The most recent common Python version is **3.12**.
 
