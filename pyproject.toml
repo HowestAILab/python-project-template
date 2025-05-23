@@ -1,25 +1,66 @@
-[tool.poetry]
-name = "template-python-project"
+[project]
+name = "python-project-template"
 version = "0.1.0"
-description = ""
-authors = ["huyghebaertthomas <thomas.huyghebaert@howest.be>"]
+description = "Add your description here"
 readme = "README.md"
-license = "MIT"
-package-mode = false
+requires-python = "==3.12.*"
+dependencies = [
+    "black>=25.1.0",
+    "ipykernel>=6.29.5",
+    "jupyter>=1.1.1",
+    "pandas>=2.2.3",
+    "pylint>=3.3.7",
+]
 
-[tool.poetry.dependencies]
-python = "^3.12"
-ipykernel = "^6.29.5"
-black = "^24.10.0"
-pylint = "^3.3.1"
-pandas = "^2.2.3"
-jupyter = "^1.1.1"
+[project.optional-dependencies]
+pt-cpu = [
+  "torch==2.7.0",
+  "torchvision==0.22.0",
+  "torchaudio==2.7.0",
+]
+pt-gpu = [
+  "torch==2.7.0",
+  "torchvision==0.22.0",
+  "torchaudio==2.7.0",
+]
+tf-cpu = [
+  "tensorflow==2.19.0"
+]
+tf-gpu = [
+  "tensorflow[and-cuda]==2.19.0"
+]
 
-[[tool.poetry.source]]
-name = "pytorch-cu128"
+[tool.uv]
+conflicts = [
+  [
+    { extra = "pt-cpu" },
+    { extra = "pt-gpu" },
+    { extra = "tf-cpu" },
+    { extra = "tf-gpu" },
+  ],
+]
+
+[tool.uv.sources]
+torch = [
+  { index = "pytorch-cpu", extra = "pt-cpu" },
+  { index = "pytorch-gpu", extra = "pt-gpu" },
+]
+torchvision = [
+  { index = "pytorch-cpu", extra = "pt-cpu" },
+  { index = "pytorch-gpu", extra = "pt-gpu" },
+]
+torchaudio = [
+  { index = "pytorch-cpu", extra = "pt-cpu" },
+  { index = "pytorch-gpu", extra = "pt-gpu" },
+]
+
+
+[[tool.uv.index]]
+name = "pytorch-gpu"
 url = "https://download.pytorch.org/whl/cu128"
-priority = "explicit"
+explicit = true
 
-[build-system]
-requires = ["poetry-core"]
-build-backend = "poetry.core.masonry.api"
+[[tool.uv.index]]
+name = "pytorch-cpu"
+url = "https://download.pytorch.org/whl/cpu"
+explicit = true
