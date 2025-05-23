@@ -6,7 +6,7 @@ try:
     with open(".devcontainer/devcontainer.json") as read_file:
         devcontainer_txt = read_file.read()
 except:
-    "Failed to read '.devcontainer/devcontainer.json' file."
+    "❌ Failed to read '.devcontainer/devcontainer.json' file."
 
 try:
     # Devcontainer.json files can contain comments, which are technically not allowed in JSON.
@@ -15,7 +15,7 @@ try:
         r'/\*.*?\*/', '', devcontainer_txt, flags=re.DOTALL)
     devcontainer_json: dict = json.loads(devcontainer_txt)
 except:
-    "Failed to parse '.devcontainer/devcontainer.json' file."
+    "❌ Failed to parse '.devcontainer/devcontainer.json' file."
 
 
 # ===================================================================
@@ -74,16 +74,7 @@ if gpu:
     host_requirements: dict = devcontainer_json.get("hostRequirements", {})
     host_requirements["gpu"] = True
     devcontainer_json["hostRequirements"] = host_requirements
-
-    # Add the NVIDIA feature to "features"
-    features: dict = devcontainer_json.get("features", {})
-    features["ghcr.io/devcontainers/features/nvidia-cuda:1"] = {
-        "installToolkit": True,
-        "installCudnn": True,
-        "cudaVersion": "12.8",
-        "cudnnVersion": "9.5.0.50"
-    }
-    devcontainer_json["features"] = features
+    devcontainer_json["postCreateCommand"] = "bash .devcontainer/scripts/post_create.sh gpu"
 
 
 if not gpu:
@@ -97,12 +88,7 @@ if not gpu:
     if "gpu" in host_requirements:
         host_requirements["gpu"] = False
     devcontainer_json["hostRequirements"] = host_requirements
-
-    # Remove the NVIDIA feature if it exists in "features"
-    features: dict = devcontainer_json.get("features", {})
-    features.pop("ghcr.io/devcontainers/features/nvidia-cuda:1", None)
-    devcontainer_json["features"] = features
-
+    devcontainer_json["postCreateCommand"] = "bash .devcontainer/scripts/post_create.sh cpu"
 
 # ===================================================================
 
@@ -111,6 +97,6 @@ try:
     with open(".devcontainer/devcontainer.json", "w") as f:
         json.dump(devcontainer_json, f, indent=2)
 except:
-    "Failed to update '.devcontainer/devcontainer.json' file."
+    "❌ Failed to update '.devcontainer/devcontainer.json' file."
 
 print("\n✅ Updated '.devcontainer/devcontainer.json' file.\n")
