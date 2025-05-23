@@ -76,14 +76,15 @@ if gpu:
     devcontainer_json["hostRequirements"] = host_requirements
 
     # Add the NVIDIA feature to "features"
-    features: dict = devcontainer_json.get("features", {})
-    features["ghcr.io/devcontainers/features/nvidia-cuda:1"] = {
-        "installToolkit": True,
-        "installCudnn": True,
-        "cudaVersion": "12.8",
-        "cudnnVersion": "9.5.0.50"
-    }
-    devcontainer_json["features"] = features
+    # features: dict = devcontainer_json.get("features", {})
+    # features["ghcr.io/devcontainers/features/nvidia-cuda:1"] = {
+    #     "installToolkit": True,
+    #     "installCudnn": True,
+    #     "cudaVersion": "12.8",
+    #     "cudnnVersion": "9.5.0.50"
+    # }
+    # devcontainer_json["features"] = features
+    devcontainer_json["postCreateCommand"] = "bash .devcontainer/scripts/post_create.sh gpu"
 
 
 if not gpu:
@@ -99,10 +100,10 @@ if not gpu:
     devcontainer_json["hostRequirements"] = host_requirements
 
     # Remove the NVIDIA feature if it exists in "features"
-    features: dict = devcontainer_json.get("features", {})
-    features.pop("ghcr.io/devcontainers/features/nvidia-cuda:1", None)
-    devcontainer_json["features"] = features
-
+    # features: dict = devcontainer_json.get("features", {})
+    # features.pop("ghcr.io/devcontainers/features/nvidia-cuda:1", None)
+    # devcontainer_json["features"] = features
+    devcontainer_json["postCreateCommand"] = "bash .devcontainer/scripts/post_create.sh cpu"
 
 # ===================================================================
 

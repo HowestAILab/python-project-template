@@ -16,12 +16,12 @@
     // The NVIDIA CUDA driver on the host system is compatible with CUDA 12.x and older toolkits
     // A GPU-enabled container requires the NVIDIA CUDA Toolkit (contains cuFFT, cuBLAS, etc.) and cuDNN in the container itself
     // For compatible version combinations check https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2404/x86_64/
-    "ghcr.io/devcontainers/features/nvidia-cuda:1": {
-      "installToolkit": true,
-      "installCudnn": true,
-      "cudaVersion": "12.8",
-      "cudnnVersion": "9.5.0.50"
-    },
+    // "ghcr.io/devcontainers/features/nvidia-cuda:1": {
+    //   "installToolkit": true,
+    //   "installCudnn": true,
+    //   "cudaVersion": "12.8",
+    //   "cudnnVersion": "9.5.0.50"
+    // },
 
     // PyTorch 2.5.0 is compatible with CUDA 12.4 and Python 3.9-3.12
     // Tensorflow 2.17.0 requires CUDA 12.3 and Python 3.9-3.12
@@ -39,7 +39,7 @@
   "remoteUser": "root",
 
   // Run commands after the container is created.
-  "postCreateCommand": "bash .devcontainer/scripts/post_create.sh",
+  "postCreateCommand": "bash .devcontainer/scripts/post_create.sh gpu",
 
   // Configure tool-specific properties.
   "customizations": {
