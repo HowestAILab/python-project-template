@@ -1,47 +1,25 @@
 {
-  "name": "Ubuntu Python CUDA",
-
-  // The host NVIDIA driver is passed to the container using the NVIDIA Container Toolkit
-  // Check "/etc/docker/daemon.json" and run the container with argument "--runtime=nvidia"
-  "runArgs": ["--gpus=all", "--runtime=nvidia"],
+  "name": "Ubuntu Python",
+  "runArgs": [
+    "--name",
+    "${localEnv:USER}_${localWorkspaceFolderBasename}",
+    "--gpus=all",
+    "--runtime=nvidia"
+  ],
   "hostRequirements": {
     "gpu": true
   },
-
-  // Base image of Ubuntu-24.04 LTS (codename Noble Numbat)
   "image": "mcr.microsoft.com/devcontainers/base:ubuntu-24.04",
-
-  // Features to install in Ubuntu. https://containers.dev/features
   "features": {
-    // The NVIDIA CUDA driver on the host system is compatible with CUDA 12.x and older toolkits
-    // A GPU-enabled container requires the NVIDIA CUDA Toolkit (contains cuFFT, cuBLAS, etc.) and cuDNN in the container itself
-    // For compatible version combinations check https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2404/x86_64/
-    // "ghcr.io/devcontainers/features/nvidia-cuda:1": {
-    //   "installToolkit": true,
-    //   "installCudnn": true,
-    //   "cudaVersion": "12.8",
-    //   "cudnnVersion": "9.5.0.50"
-    // },
-
-    // PyTorch 2.5.0 is compatible with CUDA 12.4 and Python 3.9-3.12
-    // Tensorflow 2.17.0 requires CUDA 12.3 and Python 3.9-3.12
-    // The most recent common Python version is 3.12
     "ghcr.io/devcontainers/features/python:1": {
       "version": "3.12"
     },
-
-    // Git support inside the devcontainer
     "ghcr.io/devcontainers/features/git:1": {},
-    "ghcr.io/devcontainers/features/github-cli:1": {}
+    "ghcr.io/devcontainers/features/github-cli:1": {},
+    "ghcr.io/devcontainers/features/docker-outside-of-docker:1": {}
   },
-
-  // Connect as root.
   "remoteUser": "root",
-
-  // Run commands after the container is created.
   "postCreateCommand": "bash .devcontainer/scripts/post_create.sh gpu",
-
-  // Configure tool-specific properties.
   "customizations": {
     "vscode": {
       "extensions": [
@@ -55,7 +33,4 @@
       ]
     }
   }
-
-  // Use 'forwardPorts' to make a list of ports inside the container available locally.
-  //"forwardPorts": []
 }
