@@ -4,8 +4,7 @@
 poetry_add_pytorch() {
   echo "⚙️  Creating PyTorch environment..."
   poetry remove tensorflow >> .devcontainer/logs.log
-  poetry source add --priority=explicit pytorch-cu128 https://download.pytorch.org/whl/cu128 >> .devcontainer/logs.log
-  poetry add --source pytorch-cu128 torch==2.7.0+cu128 torchvision==0.22.0+cu128 torchaudio==2.7.0+cu128 >> .devcontainer/logs.log
+  poetry add --source pytorch-gpu torch==2.7.0+cu128 torchvision==0.22.0+cu128 torchaudio==2.7.0+cu128 >> .devcontainer/logs.log
   echo "✅ PyTorch installed succesfully."
 }
 

@@ -16,7 +16,7 @@ pandas = "^2.2.3"
 jupyter = "^1.1.1"
 
 [[tool.poetry.source]]
-name = "pytorch-cu128"
+name = "pytorch-gpu"
 url = "https://download.pytorch.org/whl/cu128"
 priority = "explicit"
 
