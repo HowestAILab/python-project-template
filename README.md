@@ -56,6 +56,31 @@ _It has optional support for **TensorFlow** and **PyTorch** on **GPU** enabled m
 | Prettier        | Code formatter          | esbenp.prettier-vscode          |
 | Commit Reminder | Commit reminder         | kurozero.vscode-commit-reminder |
 
+# Dependency management
+
+## uv
+
+The **uv** package is an extremely fast Rust-based dependency manager, similar to **Poetry**.
+To better understand the differences between **pip**, **uv** and **Poetry**, check out the table below:
+
+| pip                               | poetry                    | uv                    |
+| :-------------------------------- | :------------------------ | :-------------------- |
+| `pip install <package>`           | `poetry add <package>`    | `uv add <package>`    |
+| `pip uninstall <package>`         | `poetry remove <package>` | `uv remove <package>` |
+| `pip install -r requirements.txt` | `poetry install`          | `uv sync`             |
+
+## Tensorflow & PyTorch
+
+> [!IMPORTANT]  
+> If you use this Devcontainer template, you won't have to run any of the commands below manually. Simply follow the instructions in the terminal after you rebuild your container.
+
+|                | **CPU-only**             | **GPU-accelerated**      |
+| :------------- | :----------------------- | :----------------------- |
+| **Tensorflow** | `uv sync --extra tf-cpu` | `uv sync --extra tf-gpu` |
+| **PyTorch**    | `uv sync --extra pt-cpu` | `uv sync --extra pt-gpu` |
+
+If you simply want to install your regular dependencies (FastAPI, pandas, ...) without Tensorflow or PyTorch, you can use the `uv sync` command without any `--extra` attribute.
+
 # Possible errors
 
 | **❌ Error**                                                | **✅ Solution**                                                                |
