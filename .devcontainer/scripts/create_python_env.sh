@@ -54,12 +54,12 @@ complete() {
   echo ""
   echo "😀 Setup completed, good luck with your project!"
   echo ""
-  source .venv/bin/activate
+  exit 0
 }
 
 # Install uv
 echo "⚙️  Installing uv..."
-python -m pip install uv --no-warn-script-location --root-user-action=ignore >> .devcontainer/logs.log
+python -m pip --disable-pip-version-check install uv --no-warn-script-location --root-user-action=ignore >> .devcontainer/logs.log
 echo "✅ uv installed succesfully."
 
 # Ask if the user wants to create a PyTorch environment
@@ -79,5 +79,6 @@ elif [[ "$framework" == "3" ]]; then
   complete
 else
   echo "❌ Invalid choice."
+  uv_add_default
   complete
 fi
