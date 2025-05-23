@@ -30,39 +30,42 @@ _It has optional support for **TensorFlow** and **PyTorch** on **GPU** enabled m
 
 ## Features
 
-| Name        | Version             | Image                                                                                                               | Optional |
-| :---------- | :------------------ | :------------------------------------------------------------------------------------------------------------------ | -------- |
-| NVIDIA CUDA | CUDA 12.8 & cuDNN 9 | [ghcr.io/devcontainers/features/nvidia-cuda:1](https://github.com/devcontainers/features/tree/main/src/nvidia-cuda) | Yes      |
-| Python      | 3.12                | [ghcr.io/devcontainers/features/python:1](https://github.com/devcontainers/features/tree/main/src/python)           | No       |
-| Git         | Latest              | [ghcr.io/devcontainers/features/git:1](https://github.com/devcontainers/features/tree/main/src/git)                 | No       |
-| GitHub CLI  | Latest              | [ghcr.io/devcontainers/features/github-cli:1](https://github.com/devcontainers/features/tree/main/src/github-cli)   | No       |
+| Name       | Version | Image                                                                                                             | Optional |
+| :--------- | :------ | :---------------------------------------------------------------------------------------------------------------- | -------- |
+| Python     | 3.12    | [ghcr.io/devcontainers/features/python:1](https://github.com/devcontainers/features/tree/main/src/python)         | No       |
+| Git        | Latest  | [ghcr.io/devcontainers/features/git:1](https://github.com/devcontainers/features/tree/main/src/git)               | No       |
+| GitHub CLI | Latest  | [ghcr.io/devcontainers/features/github-cli:1](https://github.com/devcontainers/features/tree/main/src/github-cli) | No       |
 
 ## Libraries
 
-| Name       | Version | Description                                         | Optional |
-| :--------- | :------ | :-------------------------------------------------- | -------- |
-| TensorFlow | 2.19.0  | AI development framework                            | Yes      |
-| PyTorch    | 2.7.0   | AI development framework                            | Yes      |
-| Poetry     | Latest  | Venv-like solution with great dependency management | No       |
+| Name       | Version | Description                       | Optional |
+| :--------- | :------ | :-------------------------------- | -------- |
+| TensorFlow | 2.19.0  | AI development framework          | Yes      |
+| PyTorch    | 2.7.0   | AI development framework          | Yes      |
+| uv         | Latest  | Extremely fast dependency manager | No       |
 
 ## Extensions
 
-| Name     | Description             | ID                        |
-| :------- | :---------------------- | :------------------------ |
-| Python   | Python language support | ms-python.python          |
-| Pylint   | Static code analyser    | ms-python.vscode-pylint   |
-| Black    | Code formatter          | ms-python.black-formatter |
-| Jupyter  | Jupyter extension pack  | ms-toolsai.jupyter        |
-| Prettier | Code formatter          | esbenp.prettier-vscode    |
+| Name            | Description             | ID                              |
+| :-------------- | :---------------------- | :------------------------------ |
+| Reload          | VSCode reload button    | natqe.reload                    |
+| Python          | Python language support | ms-python.python                |
+| Pylint          | Static code analyser    | ms-python.vscode-pylint         |
+| Black           | Code formatter          | ms-python.black-formatter       |
+| Jupyter         | Jupyter extension pack  | ms-toolsai.jupyter              |
+| Prettier        | Code formatter          | esbenp.prettier-vscode          |
+| Commit Reminder | Commit reminder         | kurozero.vscode-commit-reminder |
 
 # Possible errors
 
 | **❌ Error**                                                | **✅ Solution**                                                                |
 | :---------------------------------------------------------- | :----------------------------------------------------------------------------- |
 | Shell scripts fail to run or complain about `\r` characters | Check if the `End of Line` formatting of the scripts is set to `LF` in VSCode. |
-| `poetry shell` fails or is not recognized as a command    | Poetry shell was moved to a plugin (January 2025). Run `pip install poetry-plugin-shell` in the terminal. |
 
 # Versioning
+
+> [!NOTE]  
+> Since PyTorch and Tensorflow - if installed correctly - already include the neccessary CUDA and cuDNN tools, you don't need to install them separately. This section is only to clarify the compatibility between CUDA libraries and the host NVIDIA driver.
 
 | CUDA Toolkit | Linux Driver Version | Windows Driver Version |
 | :----------- | :------------------- | :--------------------- |
@@ -88,7 +91,6 @@ You can validate your Container Toolkit installation by checking the **Docker da
 To spin up a GPU-accelerated container, append the `--gpus=all` and `--runtime=nvidia` arguments to your `docker run` command.
 Luckily, these arguments are already preconfigured in `devcontainer.json`.
 
-The **NVIDIA driver** on the A5000 server has version **12.0**.<br/>
-A GPU-enabled container requires the **NVIDIA CUDA Toolkit** (contains cuFFT, cuBLAS, etc.) and **cuDNN** in the container itself.<br/>
+The **NVIDIA driver** on Howest AI Lab's A5000 server has version **12.0**.<br/>
 
 ![CUDA stack](.github/cuda_stack.png)
