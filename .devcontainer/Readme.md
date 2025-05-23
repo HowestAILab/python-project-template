@@ -30,11 +30,12 @@ _It has optional support for **TensorFlow** and **PyTorch** on **GPU** enabled m
 
 ## Features
 
-| Name       | Version | Image                                                                                                             | Optional |
-| :--------- | :------ | :---------------------------------------------------------------------------------------------------------------- | -------- |
-| Python     | 3.12    | [ghcr.io/devcontainers/features/python:1](https://github.com/devcontainers/features/tree/main/src/python)         | No       |
-| Git        | Latest  | [ghcr.io/devcontainers/features/git:1](https://github.com/devcontainers/features/tree/main/src/git)               | No       |
-| GitHub CLI | Latest  | [ghcr.io/devcontainers/features/github-cli:1](https://github.com/devcontainers/features/tree/main/src/github-cli) | No       |
+| Name       | Version | Image                                                                                                                                 |
+| :--------- | :------ | :------------------------------------------------------------------------------------------------------------------------------------ |
+| Python     | 3.12    | [ghcr.io/devcontainers/features/python:1](https://github.com/devcontainers/features/tree/main/src/python)                             |
+| Git        | Latest  | [ghcr.io/devcontainers/features/git:1](https://github.com/devcontainers/features/tree/main/src/git)                                   |
+| GitHub CLI | Latest  | [ghcr.io/devcontainers/features/github-cli:1](https://github.com/devcontainers/features/tree/main/src/github-cli)                     |
+| Docker     | Latest  | [ghcr.io/devcontainers/features/docker-in-docker:1](https://github.com/devcontainers/features/tree/main/src/docker-outside-of-docker) |
 
 ## Libraries
 
